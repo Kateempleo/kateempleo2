@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('empleo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.login-container {
+    position: relative;
+    background: rgba(75, 0, 130, 0.15);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(75, 0, 130, 0.2);
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(75, 0, 130, 0.2);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header i {
+    font-size: 3rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.form-header h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.form-group input {
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    padding: 12px 40px;
+    border: 2px solid rgba(75, 0, 130, 0.2);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.form-group label {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+    background: transparent;
+}
+
+.form-group input:focus,
+.form-group input:valid {
+    border-color: #4a90e2;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label {
+    top: -10px;
+    left: 15px;
+    font-size: 0.8rem;
+    padding: 0 5px;
+    background: white;
+    color: #4a90e2;
+}
+
+.form-group input:focus ~ i {
+    color: #4a90e2;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 0.5rem;
+}
+
+.forgot-password {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 0.5rem;
+}
+
+.social-btn:hover {
+    opacity: 0.8;
+}
+
+.social-btn.google {
+    background-color: #4285F4;
+}
+
+.social-btn.facebook {
+    background-color: #3B5998;
+}
+
+.social-btn.apple {
+    background-color: #000;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.signup-link a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.divider span {
+    padding: 0 10px;
+    background-color: #e1e1e1;
+    color: #666;
+}
+
+button[type="submit"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+.thank-you-message {
+    text-align: center;
+    padding: 2rem;
+    animation: slideUp 0.8s ease-out;
+    background: rgba(75, 0, 130, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(75, 0, 130, 0.1);
+    border: 1px solid rgba(75, 0, 130, 0.2);
+}
+
+.thank-you-message i {
+    font-size: 4rem;
+    color: #4BB543;
+    margin-bottom: 1rem;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.thank-you-message h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.thank-you-message p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.loading-dots {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.dots {
+    animation: dots 1.5s infinite;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes dots {
+    0%, 20% {
+        content: '.';
+    }
+    40% {
+        content: '..';
+    }
+    60%, 100% {
+        content: '...';
+    }
+}
+
+/* Glowing effect for "Thank You" text */
+.glowing-text {
+    color: indigo;
+    text-shadow: 0 0 10px rgba(75, 0, 130, 0.5),
+                 0 0 20px rgba(75, 0, 130, 0.3),
+                 0 0 30px rgba(75, 0, 130, 0.2);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(75, 0, 130, 0.5),
+                     0 0 20px rgba(75, 0, 130, 0.3),
+                     0 0 30px rgba(75, 0, 130, 0.2);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(75, 0, 130, 0.3),
+                     0 0 20px rgba(75, 0, 130, 0.2),
+                     0 0 30px rgba(75, 0, 130, 0.1);
+    }
+}
+
+/* Add these new styles for the flower animation */
+.flower {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: centerPulse 2s infinite;
+    z-index: 2;
+}
+
+.petals {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.petals::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #ff69b4;
+    border-radius: 20px;
+    animation: petalSpin 8s linear infinite;
+}
+
+.petals::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #ff69b4;
+    border-radius: 20px;
+    animation: petalSpin 8s linear infinite;
+}
+
+@keyframes petalSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes centerPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ... rest 
